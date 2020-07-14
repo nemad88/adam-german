@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import { sharedStyles } from "../shared/shared.styles";
 
-const WorksContainer = styled.div`
+const ExperienceContainer = styled.div`
   position: fixed;
   height: 60vh;
-  width: 90vw;
-  max-width: 1100px;
-
-  text-align: center;
+  width: 70vw;
   left: 50%;
   top: ${(props) =>
     props.currentPage ? sharedStyles.containerTopPosition : "100%"};
@@ -15,7 +12,7 @@ const WorksContainer = styled.div`
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
   transform: translateX(-50%);
   font-size: 24px;
-  color: white;
+  color: black;
   transition: all 0.2s ease-out 0.5s;
   overflow-y: auto;
   padding: 0 15px;
@@ -24,6 +21,7 @@ const WorksContainer = styled.div`
     top: ${(props) =>
       props.currentPage ? sharedStyles.containerTopMobilePosition : "100%"};
     height: 80vh;
+    padding: 0 5px;
   }
 
   @media screen and (max-width: 550px) {
@@ -53,6 +51,46 @@ const WorksContainer = styled.div`
   }
 `;
 
+export const Experience = styled.div`
+  /* background: #07e57b; */
+  margin: 0 0 120px 0;
+`;
+
+export const CompanyName = styled.h1`
+  color: white;
+  margin: 0 0 0 0;
+`;
+
+export const When = styled.h2`
+  max-width: 40%;
+  min-width: 280px;
+  background: black;
+  color: white;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  padding: 5px 15px 5px 5px;
+`;
+
+export const What = styled.div`
+  color: white;
+  margin: 15px 0;
+`;
+
+export const Skill = styled.div`
+  display: inline-block;
+  background: white;
+  color: black;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+`;
+
 export const StyledComponents = {
-  WorksContainer,
+  ExperienceContainer,
+  Experience,
+  CompanyName,
+  When,
+  What,
+  Skill,
 };

@@ -1,18 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { StyledComponents as S } from "./works.styles";
 
 import WorkItem from "../work-item/work-item.component";
 
-const Works = ({ activePage }) => {
-  const works = ["cool", "omnifood", "natours"];
+import { selectCurrentPage } from "../../redux/pages/pages.selector";
 
-  const workItems = works.map((work) => {
-    return <WorkItem infoPage={work}></WorkItem>;
+import { selectWorkNames } from "../../redux/works/works.selector";
+
+const Works = () => {
+  const workNames = useSelector(selectWorkNames);
+  const currentPage = useSelector(selectCurrentPage);
+
+  const workItems = workNames.map((workName) => {
+    return <WorkItem workName={workName}></WorkItem>;
   });
 
   return (
-    <S.WorksContainer className={activePage === "works" ? "active" : null}>
+    <S.WorksContainer currentPage={currentPage === "works"}>
       {workItems}
     </S.WorksContainer>
   );

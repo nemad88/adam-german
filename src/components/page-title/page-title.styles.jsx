@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-const colorsMap = {
-  home: "#0091B0",
-  works: "#FFD43C",
-  skills: "#FF5353",
-  experience: "#07E57B",
-  contact: "#ACFFE1",
-};
-
 const PageTitleLeft = styled.h1`
   color: #000e11;
   z-index: 999;
@@ -30,7 +22,7 @@ const PageTitleLeft = styled.h1`
 `;
 
 const PageTitleRight = styled.h1`
-  color: ${(props) => colorsMap[props.color]};
+  color: ${(props) => props.color};
   z-index: 999;
   position: fixed;
   font-size: 36px;

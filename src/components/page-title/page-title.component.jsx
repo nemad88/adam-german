@@ -1,33 +1,39 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { StyledComponents as S } from "./page-title.styles";
 
-const PageTitle = ({ title }) => {
-  const pageNames = ["home", "works", "skills", "experience", "contact"];
+import {
+  selectPageNames,
+  selectCurrentPage,
+  selectPageColors,
+} from "../../redux/pages/pages.selector";
 
-  console.log("title", title);
+const PageTitle = () => {
+  const pageNames = useSelector(selectPageNames);
+  const currentPage = useSelector(selectCurrentPage);
+  const pageColors = useSelector(selectPageColors);
 
-  const renderedTitles = pageNames.map((titleItem) => {
-    const length = titleItem.length;
+  const renderedTitles = pageNames.map((pageName) => {
+    const length = pageName.length;
     const half = Math.floor(length / 2);
-    const leftTitle = titleItem.substr(0, half);
-    const rightTitle = titleItem.substr(half, length);
+    const leftTitle = pageName.substr(0, half);
+    const rightTitle = pageName.substr(half, length);
 
     return (
       <>
-        <S.PageTitleLeft className={title === titleItem ? "active" : null}>
+        <S.PageTitleLeft className={pageName === currentPage ? "active" : null}>
           {leftTitle}
         </S.PageTitleLeft>
         <S.PageTitleRight
-          color={title}
-          className={title === titleItem ? "active" : null}
+          color={pageColors[pageName]}
+          className={pageName === currentPage ? "active" : null}
         >
           {rightTitle}
         </S.PageTitleRight>
       </>
     );
   });
-
   return renderedTitles;
 };
 

@@ -1,30 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { StyledComponents as S } from "./work-info.styles";
 
-const WorkInfo = ({ infoPage, active }) => {
-  const workInfos = {
-    cool: {
-      title: "Cool Clothing",
-      text: "This is a demo webshop. Created by ReactJs",
-    },
+import {
+  selectOpenedWorkInfo,
+  selectWorkInfos,
+} from "../../redux/works/works.selector";
 
-    natours: {
-      title: "Natours",
-      text:
-        "This is a demo travel agency website. Created by ",
-    },
-
-    omnifood: {
-      title: "Omnifood",
-      text: "This is a demo website",
-    },
-  };
+const WorkInfo = ({ infoPageName }) => {
+  const openedInfoPage = useSelector(selectOpenedWorkInfo);
+  const workInfos = useSelector(selectWorkInfos);
 
   return (
-    <S.Info className={active ? "visible" : null}>
-      <h1>{workInfos[infoPage].title}</h1>
-      <p>{workInfos[infoPage].text}</p>
+    <S.Info currentInfo={infoPageName === openedInfoPage}>
+      <h1>{workInfos[infoPageName].title}</h1>
+      <p>{workInfos[infoPageName].text} </p>
+      {workInfos[infoPageName].tutorialUrl ? (
+        <Link
+          to={{ pathname: workInfos[infoPageName].tutorialUrl }}
+          target="_blank"
+        >
+          Link
+        </Link>
+      ) : null}
     </S.Info>
   );
 };

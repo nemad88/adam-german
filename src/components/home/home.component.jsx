@@ -1,15 +1,19 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
+import { selectCurrentPage } from "../../redux/pages/pages.selector";
+
 import { StyledComponents as S } from "./home.styles";
 
-const Home = ({ activePage }) => {
+const Home = () => {
+  const currentPage = useSelector(selectCurrentPage);
+
   return (
-    <S.HomeContainer className={activePage === "home" ? "active" : null}>
+    <S.HomeContainer currentPage={currentPage === "home"}>
       <S.Hello>hello</S.Hello>
       <S.ICreate>i create websites</S.ICreate>
-      <S.Adam>
-        <span>&nbsp; </span> Adam
-      </S.Adam>
+      <S.Adam>Adam</S.Adam>
     </S.HomeContainer>
   );
 };

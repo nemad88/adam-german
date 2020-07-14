@@ -19,7 +19,7 @@ const iconStyle = css`
   }
 
   &.opened path {
-    fill: #aad43c;
+    fill: #ffd43c;
   }
 
   @media screen and (max-width: 550px) {
@@ -28,23 +28,18 @@ const iconStyle = css`
   }
 `;
 
-const Screenshot = styled.img`
-  width: 800px;
-
-  @media screen and (max-width: 850px) {
-    width: 400px;
-  }
-
-  @media screen and (max-width: 550px) {
-    width: 200px;
-  }
-`;
-
 const WorkItem = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
+  max-width: 1000px;
+  
+`;
+
+const Screenshot = styled.img`
+  width: 100%;
 `;
 
 export const IconContainer = styled.div`
@@ -52,8 +47,9 @@ export const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 80px;
-  position: relative;
-  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   flex-direction: column;
   background: #000e11;
 
@@ -73,24 +69,6 @@ export const InfoIcon = styled(InfoSVG)`
   z-index: 99;
 `;
 
-export const Info = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0px;
-  left: 0px;
-  width: 380px;
-  height: 100%;
-  background: rgba(0, 14, 17, 0.9);
-  opacity: 0;
-  transition: all 0.4s ease-out;
-
-  &.visible {
-    opacity: 1;
-  }
-`;
-
 export const StyledComponents = {
   Screenshot,
   WorkItem,
@@ -98,5 +76,4 @@ export const StyledComponents = {
   GithubIcon,
   InfoIcon,
   IconContainer,
-  Info,
 };

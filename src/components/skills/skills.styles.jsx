@@ -1,33 +1,31 @@
 import styled from "styled-components";
 import { sharedStyles } from "../shared/shared.styles";
 
-const WorksContainer = styled.div`
+const SkillsContainer = styled.div`
   position: fixed;
-  height: 60vh;
   width: 90vw;
-  max-width: 1100px;
-
-  text-align: center;
+  height: 60vh;
+  top: 25%;
   left: 50%;
+
   top: ${(props) =>
     props.currentPage ? sharedStyles.containerTopPosition : "100%"};
   opacity: ${(props) => (props.currentPage ? 1 : 0)};
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
+
   transform: translateX(-50%);
   font-size: 24px;
-  color: white;
+  color: black;
+  z-index: 3;
   transition: all 0.2s ease-out 0.5s;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 0 15px;
 
   @media screen and (max-width: 850px) and (min-height: 500px) {
     top: ${(props) =>
       props.currentPage ? sharedStyles.containerTopMobilePosition : "100%"};
     height: 80vh;
-  }
-
-  @media screen and (max-width: 550px) {
-    width: 95%;
+    padding-bottom: 80px;
   }
 
   /* width */
@@ -51,8 +49,25 @@ const WorksContainer = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: white;
   }
+
+  .skill-line {
+    margin: 0 0 20px 0;
+    display: block;
+    /* border: 5px solid white;
+  border-left: none;
+  border-right: none; */
+    background: white;
+    padding: 15px;
+
+    mark {
+      font-weight: bold;
+      background: inherit;
+      /* color: white;
+      background: black; */
+    }
+  }
 `;
 
 export const StyledComponents = {
-  WorksContainer,
+  SkillsContainer,
 };

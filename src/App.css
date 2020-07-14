@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
+  transition: none;
 }
 
 body {
-  background: #000e11;  
+  background: #000e11;
 }

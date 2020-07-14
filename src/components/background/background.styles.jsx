@@ -1,15 +1,7 @@
 import styled from "styled-components";
 
-const colorsMap = {
-  home: "#0091B0",
-  works: "#FFD43C",
-  skills: "#FF5353",
-  experience: "#07E57B",
-  contact: "#ACFFE1",
-};
-
 const LeftSide = styled.div`
-  background: ${(props) => colorsMap[props.color]};
+  background: ${(props) => props.color};
   position: fixed;
   left: 0;
   bottom: 0;

@@ -1,16 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { StyledComponents as S } from "./background.styles";
 
-const Background = ({ activePageName }) => {
-  const pageNames = ["home", "works", "skills", "experience", "contact"];
+import {
+  selectPageNames,
+  selectCurrentPage,
+  selectPageColors,
+} from "../../redux/pages/pages.selector";
 
-  const renderedLeftSides = pageNames.map((page) => {
+const Background = () => {
+  const pageNames = useSelector(selectPageNames);
+  const currentPage = useSelector(selectCurrentPage);
+  const pageColors = useSelector(selectPageColors);
+
+  const renderedLeftSides = pageNames.map((pageName) => {
     return (
       <S.LeftSide
-        key={page}
-        color={page}
-        className={page === activePageName ? "visible" : null}
+        key={pageName}
+        color={pageColors[pageName]}
+        className={pageName === currentPage ? "visible" : null}
       ></S.LeftSide>
     );
   });
@@ -19,7 +28,6 @@ const Background = ({ activePageName }) => {
     <div>
       {renderedLeftSides}
       <S.RightSide></S.RightSide>
-      {/* <S.Start></S.Start> */}
     </div>
   );
 };

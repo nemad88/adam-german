@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Background from "../components/background/background.component";
 import Nav from "../components/nav/nav.component";
 import PageTitle from "../components/page-title/page-title.component";
-import Works from "../components/works/works.component";
 import Home from "../components/home/home.component";
+import Works from "../components/works/works.component";
+import Skills from "../components/skills/skills.component";
+import Experience from "../components/experience/experience.component";
+import Contact from "../components/contact/contact.component";
 
 const MainPage = () => {
-  const [activePageName, setActivePageName] = useState("home");
-
-  const handleChangePage = (pageName) => {
-    console.log(pageName);
-    setActivePageName(pageName);
-  };
-
   return (
     <>
-      <Nav handleChange={handleChangePage} activePage={activePageName}></Nav>
-      <Background activePageName={activePageName}></Background>
-      <PageTitle title={activePageName}></PageTitle>
-      <Works activePage={activePageName}></Works>
-      <Home activePage={activePageName}></Home>
+      <Nav></Nav>
+      <Background></Background>
+      <PageTitle></PageTitle>
+      <Experience></Experience>
+      <Works></Works>
+      <Skills></Skills>
+      <Contact></Contact>
+      <Home></Home>
     </>
   );
 };
