@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { ReactComponent as EyeSVG } from "../../assets/img/eye.svg";
-import { ReactComponent as GithubSVG } from "../../assets/img/github.svg";
-import { ReactComponent as InfoSVG } from "../../assets/img/info.svg";
+import { ReactComponent as EyeSVG } from '../../assets/img/eye.svg';
+import { ReactComponent as GithubSVG } from '../../assets/img/github.svg';
+import { ReactComponent as InfoSVG } from '../../assets/img/info.svg';
 
 const iconStyle = css`
   width: 50px;
@@ -35,7 +35,6 @@ const WorkItem = styled.div`
   align-items: flex-start;
   margin-bottom: 100px;
   max-width: 1000px;
-  
 `;
 
 const Screenshot = styled.img`
@@ -52,6 +51,10 @@ export const IconContainer = styled.div`
   left: 0;
   flex-direction: column;
   background: #000e11;
+
+  a {
+    z-index: 99;
+  }
 
   @media screen and (max-width: 550px) {
     width: 50px;

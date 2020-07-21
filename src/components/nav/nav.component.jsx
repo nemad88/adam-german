@@ -1,16 +1,16 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { StyledComponents as S } from "./nav.styles";
+import { StyledComponents as S } from './nav.styles';
 
 import {
   selectPageNames,
   selectCurrentPage,
   selectPageColors,
-} from "../../redux/pages/pages.selector";
+} from '../../redux/pages/pages.selector';
 
-import { setCurrentPage } from "../../redux/pages/pages.actions";
-import { closeAllInfoPage } from "../../redux/works/works.actions";
+import { setCurrentPage } from '../../redux/pages/pages.actions';
+import { closeAllInfoPage } from '../../redux/works/works.actions';
 
 const Nav = () => {
   const pageNames = useSelector(selectPageNames);
@@ -22,7 +22,8 @@ const Nav = () => {
   const renderedNavList = pageNames.map((pageName) => {
     return (
       <S.NavElement
-        className={pageName === currentPage ? "active" : null}
+        key={pageName}
+        className={pageName === currentPage ? 'active' : null}
         color={pageColors[pageName]}
         onClick={() => {
           dispatch(setCurrentPage(pageName));

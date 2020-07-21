@@ -1,9 +1,9 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import worksReducer from "./works/works.reducer";
-import pagesReducer from "./pages/pages.reducer";
-import skillsReducer from "./skills/skills.reducer";
-import experienceReducer from "./experience/experience.reducer";
+import worksReducer from './works/works.reducer';
+import pagesReducer from './pages/pages.reducer';
+import skillsReducer from './skills/skills.reducer';
+import experienceReducer from './experience/experience.reducer';
 
 const rootReducer = combineReducers({
   works: worksReducer,

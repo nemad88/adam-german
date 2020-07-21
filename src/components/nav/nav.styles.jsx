@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const NavContainer = styled.ul`
   display: flex;
@@ -16,7 +16,7 @@ const NavElement = styled.li`
   padding: 15px;
   position: relative;
   transition-property: all;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: ease;
   cursor: pointer;
 

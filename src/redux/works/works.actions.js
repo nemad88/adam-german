@@ -1,4 +1,4 @@
-import { WorksActionTypes } from "./works.types";
+import { WorksActionTypes } from './works.types';
 
 export const openInfoPage = (page) => ({
   type: WorksActionTypes.OPEN_INFO_PAGE,

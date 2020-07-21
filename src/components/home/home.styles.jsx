@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const HomeContainer = styled.div`
   position: fixed;
@@ -9,8 +9,8 @@ const HomeContainer = styled.div`
 
   transform: ${(props) =>
     props.currentPage
-      ? "translateX(-50%) translateY(-50%)"
-      : "translateX(-50%) translateY(100%)"};
+      ? 'translateX(-50%) translateY(-50%)'
+      : 'translateX(-50%) translateY(100%)'};
   opacity: ${(props) => (props.currentPage ? 1 : 0)};
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
 

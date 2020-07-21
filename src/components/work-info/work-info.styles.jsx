@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Info = styled.div`
   position: absolute;
@@ -8,8 +8,8 @@ export const Info = styled.div`
   flex-direction: column;
   top: 0px;
   left: 0px;
-  width: ${(props) => (props.currentInfo ? "100%" : "0")};
-  height: ${(props) => (props.currentInfo ? "222px" : "222px")};
+  width: ${(props) => (props.currentInfo ? '100%' : '0')};
+  height: ${(props) => (props.currentInfo ? '222px' : '222px')};
   background: rgba(0, 14, 17, 1);
   font-size: 0;
   opacity: ${(props) => (props.currentInfo ? 1 : 0)};

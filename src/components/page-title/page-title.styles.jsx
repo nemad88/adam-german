@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const PageTitleLeft = styled.h1`
   color: #000e11;

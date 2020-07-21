@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { ReactComponent as GitHubSVG } from "../../assets/img/github.svg";
-import { ReactComponent as MailSVG } from "../../assets/img/mail.svg";
-import { ReactComponent as CVSVG } from "../../assets/img/CV.svg";
-import { ReactComponent as LinkedInSVG } from "../../assets/img/linkedin.svg";
+import { ReactComponent as GitHubSVG } from '../../assets/img/github.svg';
+import { ReactComponent as MailSVG } from '../../assets/img/mail.svg';
+import { ReactComponent as CVSVG } from '../../assets/img/CV.svg';
+import { ReactComponent as LinkedInSVG } from '../../assets/img/linkedin.svg';
 
 const iconStyle = css`
   width: 127px;
@@ -50,7 +50,7 @@ export const MailIcon = styled(MailSVG)`
 
 export const IconContainerLeft = styled.div`
   position: fixed;
-  top: ${(props) => (props.currentPage ? "50%" : "100%")};
+  top: ${(props) => (props.currentPage ? '50%' : '100%')};
   opacity: ${(props) => (props.currentPage ? 1 : 0)};
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
   left: 25%;
@@ -61,7 +61,7 @@ export const IconContainerLeft = styled.div`
   align-items: center;
 
   @media screen and (max-width: 850px) {
-    top: ${(props) => (props.currentPage ? "75%" : "100%")};
+    top: ${(props) => (props.currentPage ? '75%' : '100%')};
     opacity: ${(props) => (props.currentPage ? 1 : 0)};
     z-index: ${(props) => (props.currentPage ? 99 : 1)};
     left: 50%;
@@ -75,7 +75,7 @@ export const IconContainerLeft = styled.div`
 
 export const IconContainerRight = styled.div`
   position: fixed;
-  top: ${(props) => (props.currentPage ? "50%" : "100%")};
+  top: ${(props) => (props.currentPage ? '50%' : '100%')};
   opacity: ${(props) => (props.currentPage ? 1 : 0)};
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
   left: 75%;
@@ -87,7 +87,7 @@ export const IconContainerRight = styled.div`
 
   @media screen and (max-width: 850px) {
     transition: all 0.1s ease-out 0.5s;
-    top: ${(props) => (props.currentPage ? "25%" : "100%")};
+    top: ${(props) => (props.currentPage ? '25%' : '100%')};
     opacity: ${(props) => (props.currentPage ? 1 : 0)};
     z-index: ${(props) => (props.currentPage ? 99 : 1)};
     left: 50%;

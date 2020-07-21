@@ -1,13 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { StyledComponents as S } from "./work-info.styles";
+import { StyledComponents as S } from './work-info.styles';
 
 import {
   selectOpenedWorkInfo,
   selectWorkInfos,
-} from "../../redux/works/works.selector";
+} from '../../redux/works/works.selector';
 
 const WorkInfo = ({ infoPageName }) => {
   const openedInfoPage = useSelector(selectOpenedWorkInfo);

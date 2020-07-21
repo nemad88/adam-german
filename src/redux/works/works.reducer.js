@@ -1,34 +1,34 @@
-import { WorksActionTypes } from "./works.types";
+import { WorksActionTypes } from './works.types';
 
 const INITIAL_STATE = {
-  openedInfoPage: "",
-  workNames: ["cool", "omnifood", "natours"],
+  openedInfoPage: '',
+  workNames: ['cool', 'omnifood', 'natours'],
   workInfos: {
     cool: {
-      title: "Cool Clothing",
+      title: 'Cool Clothing',
       text:
-        "This is a self developed demo webshop. Powered by React and Firebase.",
-      github: "https://github.com/nemad88/cool-clothing",
-      demosite: "https://nemad88.github.io/cool-clothing",
+        'This is a self developed demo webshop. Powered by React and Firebase.',
+      github: 'https://github.com/nemad88/cool-clothing',
+      demosite: 'https://nemad88.github.io/cool-clothing',
     },
 
     natours: {
-      title: "Natours",
+      title: 'Natours',
       text:
-        "Fictive travel agency. Based on Jonas Schmedtmanns CSS, SASS tutorial video.",
-      github: "https://github.com/nemad88/natours",
-      demosite: "http://adamgerman.hu/works/natours",
-      tutorialUrl: "https://www.udemy.com/advanced-css-and-sass/",
+        'Fictive travel agency. Based on Jonas Schmedtmanns CSS, SASS tutorial video.',
+      github: 'https://github.com/nemad88/natours',
+      demosite: 'http://adamgerman.hu/works/natours',
+      tutorialUrl: 'https://www.udemy.com/advanced-css-and-sass/',
     },
 
     omnifood: {
-      title: "Omnifood",
+      title: 'Omnifood',
       text:
-        "Fictive food delivery site. Based on Jonas Schmedtmanns CSS tutorial.",
+        'Fictive food delivery site. Based on Jonas Schmedtmanns CSS tutorial.',
       tutorialUrl:
-        "https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/",
-      github: "https://github.com/nemad88/omnifood",
-      demosite: "http://adamgerman.hu/works/omnifood/",
+        'https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/',
+      github: 'https://github.com/nemad88/omnifood',
+      demosite: 'http://adamgerman.hu/works/omnifood/',
     },
   },
 };
@@ -43,7 +43,7 @@ const worksReducer = (state = INITIAL_STATE, action) => {
     case WorksActionTypes.CLOSE_ALL_INFO_PAGE:
       return {
         ...state,
-        openedInfoPage: "",
+        openedInfoPage: '',
       };
     default:
       return state;

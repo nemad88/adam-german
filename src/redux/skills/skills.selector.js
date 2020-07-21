@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 
 const selectSkills = (state) => state.skills;
 
@@ -10,4 +10,4 @@ export const selectSkillsList = createSelector(
 export const selectKeyWords = createSelector(
   [selectSkills],
   (skills) => skills.keyWords
-)
+);

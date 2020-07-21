@@ -1,15 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { StyledComponents as S } from "./skills.styles";
+import { StyledComponents as S } from './skills.styles';
 
 import {
   selectSkillsList,
   selectKeyWords,
-} from "../../redux/skills/skills.selector";
-import { selectCurrentPage } from "../../redux/pages/pages.selector";
+} from '../../redux/skills/skills.selector';
+import { selectCurrentPage } from '../../redux/pages/pages.selector';
 
-import Highlighter from "react-highlight-words";
+import Highlighter from 'react-highlight-words';
 
 const Skills = () => {
   const skills = useSelector(selectSkillsList);
@@ -19,6 +19,7 @@ const Skills = () => {
   const renderedSkills = skills.map((skill) => {
     return (
       <Highlighter
+        key={skill}
         className="skill-line"
         highlightClassName="highlight"
         searchWords={keyWords}
@@ -28,7 +29,7 @@ const Skills = () => {
   });
 
   return (
-    <S.SkillsContainer currentPage={currentPage === "skills"}>
+    <S.SkillsContainer currentPage={currentPage === 'skills'}>
       {renderedSkills}
     </S.SkillsContainer>
   );

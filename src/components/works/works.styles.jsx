@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { sharedStyles } from "../shared/shared.styles";
+import styled from 'styled-components';
+import { sharedStyles } from '../shared/shared.styles';
 
 const WorksContainer = styled.div`
   position: fixed;
@@ -10,7 +10,7 @@ const WorksContainer = styled.div`
   text-align: center;
   left: 50%;
   top: ${(props) =>
-    props.currentPage ? sharedStyles.containerTopPosition : "100%"};
+    props.currentPage ? sharedStyles.containerTopPosition : '100%'};
   opacity: ${(props) => (props.currentPage ? 1 : 0)};
   z-index: ${(props) => (props.currentPage ? 99 : 1)};
   transform: translateX(-50%);
@@ -22,7 +22,7 @@ const WorksContainer = styled.div`
 
   @media screen and (max-width: 850px) and (min-height: 500px) {
     top: ${(props) =>
-      props.currentPage ? sharedStyles.containerTopMobilePosition : "100%"};
+      props.currentPage ? sharedStyles.containerTopMobilePosition : '100%'};
     height: 80vh;
   }
 

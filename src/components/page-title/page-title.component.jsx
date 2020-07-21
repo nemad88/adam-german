@@ -1,13 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { StyledComponents as S } from "./page-title.styles";
+import { StyledComponents as S } from './page-title.styles';
 
 import {
   selectPageNames,
   selectCurrentPage,
   selectPageColors,
-} from "../../redux/pages/pages.selector";
+} from '../../redux/pages/pages.selector';
 
 const PageTitle = () => {
   const pageNames = useSelector(selectPageNames);
@@ -21,17 +21,17 @@ const PageTitle = () => {
     const rightTitle = pageName.substr(half, length);
 
     return (
-      <>
-        <S.PageTitleLeft className={pageName === currentPage ? "active" : null}>
+      <React.Fragment key={pageName}>
+        <S.PageTitleLeft className={pageName === currentPage ? 'active' : null}>
           {leftTitle}
         </S.PageTitleLeft>
         <S.PageTitleRight
           color={pageColors[pageName]}
-          className={pageName === currentPage ? "active" : null}
+          className={pageName === currentPage ? 'active' : null}
         >
           {rightTitle}
         </S.PageTitleRight>
-      </>
+      </React.Fragment>
     );
   });
   return renderedTitles;
